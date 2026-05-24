@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIGateway AI — Intelligent API Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="logo">⚡ APIGateway AI</div>
+        <div class="topbar-right">
+            <span class="ai-badge">MiMo V2.5 Router</span>
+            <span class="live-dot"></span>
+            <span class="live-text">1,247 req/s</span>
+        </div>
+    </header>
+
+    <main class="dashboard">
+        <section class="metrics-row">
+            <div class="metric-card">
+                <div class="metric-value" id="totalRequests">2.4M</div>
+                <div class="metric-label">Requests (24h)</div>
+                <div class="metric-change positive">+12.3%</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">42ms</div>
+                <div class="metric-label">Avg Latency</div>
+                <div class="metric-change negative">+3ms</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">99.97%</div>
+                <div class="metric-label">Uptime</div>
+                <div class="metric-change positive">+0.02%</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value" id="errorRate">0.03%</div>
+                <div class="metric-label">Error Rate</div>
+                <div class="metric-change positive">-0.01%</div>
+            </div>
+        </section>
+
+        <div class="main-grid">
+            <section class="panel endpoints-panel">
+                <div class="panel-header">
+                    <h2>Endpoints</h2>
+                    <button class="btn-sm" id="addEndpointBtn">+ Add Route</button>
+                </div>
+                <table class="endpoint-table">
+                    <thead>
+                        <tr>
+                            <th>Method</th>
+                            <th>Endpoint</th>
+                            <th>Upstream</th>
+                            <th>Latency</th>
+                            <th>RPS</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="endpointBody"></tbody>
+                </table>
+            </section>
+
+            <aside class="side-grid">
+                <div class="panel rate-panel">
+                    <div class="panel-header">
+                        <h2>Rate Limits</h2>
+                    </div>
+                    <div class="gauges" id="rateGauges"></div>
+                </div>
+
+                <div class="panel flow-panel">
+                    <div class="panel-header">
+                        <h2>Routing Flow</h2>
+                    </div>
+                    <div class="flow-diagram" id="flowDiagram"></div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
